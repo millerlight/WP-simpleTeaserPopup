@@ -1,0 +1,145 @@
+/* Popup-Layout */
+#simple-teaser-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Popup Content */
+.popup-content {
+    text-align: left;
+    position: relative;
+    padding-bottom: 80px; /* Increased space to ensure the button doesn't overlap the text */
+}
+
+/* Animierte Schrift (Headline) */
+.popup-content h2 {
+    font-size: 36px; /* Base size, dynamically adjusted by JavaScript */
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    padding: 0 20px;
+    animation: colorChange 2s infinite alternate;
+    margin-bottom: 10px; /* Reduced space between headline and content */
+}
+
+/* Content Text Block */
+.popup-text-block {
+    width: calc(100% - 20px);
+    margin: 24px;
+    padding-top: 10px; /* Reduce padding above content text */
+    word-wrap: break-word;
+    line-height: 1.5; /* Improve readability */
+    font-size: 16px; /* Base size, dynamically overridden by JavaScript */
+    margin-bottom: 20px; /* Ensure space between content text and button */
+}
+
+/* Weiterleitungs-Button */
+.more-info-button {
+    display: block;
+    position: absolute;
+    bottom: 20px; /* Ensure it's always at the bottom of the popup */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 18px; /* Base size */
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Schließen-Button */
+.close-popup {
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    z-index: 10000;
+}
+
+/* Responsive popup */
+@media (max-width: 1200px) {
+    #simple-teaser-popup {
+        width: 80%;
+        height: auto;
+        max-height: 90%;
+    }
+
+    .popup-content h2 {
+        font-size: 3vw; /* Subtle decrease for animated title */
+        margin-bottom: 10px; /* Reduce space between animated title and text */
+    }
+
+    .popup-text-block {
+        font-size: 1.8vw; /* Slightly larger content text for better readability */
+        margin-bottom: 20px; /* Provide space between content text and button */
+    }
+
+    .more-info-button {
+        font-size: 1.8vw; /* Slightly smaller button text */
+        padding: 8px 16px; /* Adjust button padding for smaller screens */
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 800px) {
+    #simple-teaser-popup {
+        width: 90%;
+        height: auto;
+        max-height: 90%;
+    }
+
+    .popup-content h2 {
+        font-size: 3.5vw; /* More subtle decrease for animated title */
+        margin-bottom: 10px; /* Reduce space between animated title and text */
+    }
+
+    .popup-text-block {
+        font-size: 2vw; /* Slightly larger content text for better readability */
+        margin-bottom: 20px; /* Provide space between content text and button */
+    }
+
+    .more-info-button {
+        font-size: 2vw; /* Slightly smaller button text */
+        padding: 8px 16px; /* Adjust button padding for smaller screens */
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    #simple-teaser-popup {
+        width: 95%;
+        height: auto;
+        max-height: 90%;
+    }
+
+    .popup-content h2 {
+        font-size: 4vw; /* More subtle decrease for animated title */
+        margin-bottom: 10px; /* Reduce space between animated title and text */
+    }
+
+    .popup-text-block {
+        font-size: 2.2vw; /* Slightly larger content text for smaller screens */
+        margin-bottom: 20px; /* Provide space between content text and button */
+    }
+
+    .more-info-button {
+        font-size: 2.2vw; /* Slightly smaller button text */
+        padding: 8px 16px; /* Adjust button padding for smaller screens */
+        bottom: 20px;
+    }
+}
